@@ -39,7 +39,7 @@ The default value for the breakpoints is:
             max: 1023,
             min: 720
         },
-        'lap-and:-up': {
+        'lap-and-up': {
             min: 720
         },
         portable: {
