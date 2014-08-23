@@ -5,7 +5,7 @@ A simple jQuery plugin which allows you to set callbacks to be called on customi
 ### $.breakpoint.on ###
 To set a callback to be run on a breakpoint, call `$.breakpoint.on`. The first parameter `toMatch` is an array of the names of the breakpoints which, when entered/exited the callback should be called. The second parameter is the callback which should be called. The third parameter is optional, and provides a way to automatically return the name of the breakpoint that is matched at the time of calling - note that this will not work unless the page has been fully rendered at the time of calling. The fourth parameter is optional, and provides a way to override the breakpoints which should be used with this particular callback - it will not affect any other callbacks that you set. For information about the format of this parameter, see $.breakpoint.changeBreakpoints.
 
-The callback receives the name of the first breakpoint matched in the `toMatch` array, if no breakpoint was matched (in the case that one of these breakpoints was left), then this will be 'default'.
+The callback receives the name of the first breakpoint matched in the `toMatch` array, if no breakpoint was matched (in the case that one of these breakpoints was left), then this will be 'default'. In addition, the breakpoint matched at the time of calling is returned from every call to `$.breakpoint.on`.
 
     var makeChanges = function (breakpointName) {
         if (breakpointName === 'palm') {
