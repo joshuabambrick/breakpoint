@@ -79,12 +79,12 @@
         };
 
         // alt breakpoints REPLACE the current ones but only apply to this particular callback 
-        on = function (toMatch, callback, callImmediately, altBreakpoints) {
+        on = function (toMatch, callback, callNow, altBreakpoints) {
             var width = $window.width(), callbackObj, temp;
 
-            if (typeof callImmediately === 'object') {
-                temp = callImmediately;
-                callImmediately = altBreakpoints;
+            if (typeof callNow === 'object') {
+                temp = callNow;
+                callNow = altBreakpoints;
                 altBreakpoints = temp;
             }
 
@@ -95,7 +95,7 @@
                 altBreakpoints: altBreakpoints
             };
 
-            if (callImmediately) {
+            if (callNow) {
                 callback(callbackObj.lastSent);
             }
 
