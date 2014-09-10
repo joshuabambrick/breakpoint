@@ -66,7 +66,7 @@
         getMatch = function (toMatch, width, breakpoints) {
             var match;
 
-            _.each(toMatch, function (curMatch) {
+            $.each(toMatch, function (curMatchIndex, curMatch) {
                 var min = breakpoints[curMatch] && breakpoints[curMatch].min,
                     max = breakpoints[curMatch] && breakpoints[curMatch].max;
 
