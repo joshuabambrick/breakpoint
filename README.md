@@ -34,10 +34,12 @@ To disable the callback set above:
 
     $.breakpoint.off(makeChanges);
 
-### $.breakpoint.changeBreakpoints(newDefaultBreakpoints) ###
+### $.breakpoint.changeBreakpoints(newDefaultBreakpoints, [keepOld]) ###
 In order to change the global breakpoints - which apply to all callbacks set using `$.breakpoint.on`, except those for which the breakpoints have been overridden - call `$.breakpoint.changeBreakpoints`.
 
-The first and only parameter, `newDefaultBreakpoints`, is a map of the new breakpoints. The property names of this object correspond to the names used to refer to the breakpoints in calls to `$.breakpoint.on`. The format of each property of this map is an object with the properties `min` and `max` indicating the width of the window, in number of pixels, which should match this breakpoint. A breakpoint name of `default` is not advisable as this will lead to ambiguity when this is passed to a callback.
+The first parameter, `newDefaultBreakpoints`, is a map of the new breakpoints. The property names of this object correspond to the names used to refer to the breakpoints in calls to `$.breakpoint.on`. The format of each property of this map is an object with the properties `min` and `max` indicating the width of the window, in number of pixels, which should match this breakpoint. A breakpoint name of `default` is not advisable as this will lead to ambiguity when this is passed to a callback.
+
+If the second parmeter `keepOld` is `true`, then the `newDefaultBreakpoints` passed will be added to the current default breakpoints, overriding the old where the names are the same.
 
 The default value for the breakpoints is:
 
